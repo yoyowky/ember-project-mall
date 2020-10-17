@@ -1,5 +1,8 @@
 <GeneralContainer>
     {{!-- yield in component --}}
+    {{#each this.model as |product|}}
+        <Product @product={{product}}/>
+    {{/each}}
     <Product/>
     <Product/>
 </GeneralContainer>

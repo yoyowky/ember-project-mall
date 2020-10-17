@@ -1,14 +1,17 @@
 <GeneralContainer>
     <div class="product item-details-page">
         <Product::Image @src={{this.productImage}}/>
-        <Product::Details @color={{this.color}} @onChangeColor={{this.onChangeColor}}/>
+        <Product::Details 
+        @name={{this.model.name}} 
+        @price={{this.model.price}}
+        @colors={{this.model.colors}}
+        @color={{this.color}} 
+        @onChangeColor={{this.onChangeColor}}/>
     </div>
     <h5 class="mt-5">Feature</h5>
     <ul>
-        <li>Pure adaptive noise canceling (pure ANC) actively blocks external noise</li>
-        <li>Real-time Audio calibration preserves a Premium listening experience</li>
-        <li>Up to 22 hours of battery life enables full-featured all-day wireless playback</li>
-        <li>Apple W1 chip for class 1 wireless Bluetooth connectivity and battery efficiency</li>
-        <li>With fast Fuel, a 10-minute charge gives 3 hours of play when battery is low</li>
+        {{#each this.model.features as |feature|}}
+        <li>{{feature}}</li>
+        {{/each}}
     </ul>
 </GeneralContainer>
